@@ -3,7 +3,8 @@ import { motion, AnimatePresence } from "motion/react";
 import { SplitText } from "./SplitText";
 import { ParallaxImage } from "./ParallaxImage";
 import { haptics } from "../utils/haptics";
-
+import imgEileanDonan from "../assets/images/eilean_donan.png";
+import imgGlencoe from "../assets/images/glencoe.png";
 interface ScotlandStory {
   id: string;
   title: string;
@@ -17,14 +18,14 @@ const stories: ScotlandStory[] = [
     id: "scot-castle",
     title: "Eilean Donan Castle",
     description: "Rising dramatically from the cold, dark tidal waters of three meeting lochs, the ancient stone fortifications of Eilean Donan stand as an eternal sentinel. Framed by majestic misty peaks and pine-covered shores, the castle's iconic silhouette tells tales of legendary Highland clans, hard-fought wars, and timeless architectural endurance. As fog wraps around its ancient battlements, the spirit of medieval Scotland is kept alive within its rugged walls.",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Eilean_Donan_Castle%2C_Scotland_-_Jan_2011.jpg/1200px-Eilean_Donan_Castle%2C_Scotland_-_Jan_2011.jpg",
+    imageUrl: imgEileanDonan,
     accent: "Kintail Highlands",
   },
   {
     id: "scot-glencoe",
     title: "The Pass of Glencoe",
     description: "An awe-inspiring volcanic valley of immense scale, flanked by sheer, brooding mountains and deep ravines. Heavy, low-hanging clouds constantly spill over the rocky ridges of the Three Sisters, sweeping cold rain, mountain breezes, and a thick morning fog across empty paths paved by ancient footsteps. This dramatic, untamed landscape encapsulates the solemn majesty and untamable wildness of the Scottish Highlands.",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Glen_Coe_looking_East.jpg/1200px-Glen_Coe_looking_East.jpg",
+    imageUrl: imgGlencoe,
     accent: "Argyll & Bute",
   },
   {
