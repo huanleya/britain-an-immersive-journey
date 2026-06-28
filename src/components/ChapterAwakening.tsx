@@ -3,8 +3,6 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { SplitText } from "./SplitText";
 import { ParallaxImage } from "./ParallaxImage";
 import { useTranslation } from "react-i18next";
-import imgUnsplash151363526997559663e0ac1ad from "../assets/images/unsplash_1513635269975-59663e0ac1ad.jpg";
-import imgUnsplash1529655683826aba9b3e77383 from "../assets/images/unsplash_1529655683826-aba9b3e77383.jpg";
 
 export const ChapterAwakening: React.FC = () => {
   const { t } = useTranslation();
@@ -95,7 +93,7 @@ export const ChapterAwakening: React.FC = () => {
               transition={{ duration: 1.8, ease: [0.76, 0, 0.24, 1] }}
             />
             <ParallaxImage
-              src={imgUnsplash151363526997559663e0ac1ad}
+              src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=1200&auto=format&fit=crop"
               alt="Elizabeth Tower enveloped in soft early morning mist"
             />
           </motion.div>
@@ -113,7 +111,7 @@ export const ChapterAwakening: React.FC = () => {
               transition={{ duration: 1.8, ease: [0.76, 0, 0.24, 1], delay: 0.3 }}
             />
             <ParallaxImage
-              src={imgUnsplash1529655683826aba9b3e77383}
+              src="https://images.unsplash.com/photo-1529655683826-aba9b3e77383?q=80&w=800&auto=format&fit=crop"
               alt="Vintage brick and architectural rooftops details of London houses"
             />
           </motion.div>

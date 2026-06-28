@@ -10,7 +10,6 @@ import imgBuckingham from "../assets/images/buckingham.jpg";
 import imgEdinburghCastle from "../assets/images/edinburgh_castle.jpg";
 import imgBritishMuseum from "../assets/images/british_museum.jpg";
 import { useTranslation } from "react-i18next";
-import imgUnsplash148629926707083823f5448dd from "../assets/images/unsplash_1486299267070-83823f5448dd.jpg";
 
 interface Landmark {
   id: string;
@@ -19,7 +18,7 @@ interface Landmark {
 
 const landmarksData: Landmark[] = [
   { id: "tower-bridge", imageUrl: imgTowerBridge },
-  { id: "westminster", imageUrl: {imgUnsplash148629926707083823f5448dd} },
+  { id: "westminster", imageUrl: "https://images.unsplash.com/photo-1486299267070-83823f5448dd?q=80&w=1920&auto=format&fit=crop" },
   { id: "st-pauls", imageUrl: imgStPauls },
   { id: "london-eye", imageUrl: imgLondonEye },
   { id: "big-ben", imageUrl: imgBigBen },

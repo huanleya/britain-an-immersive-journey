@@ -7,9 +7,6 @@ import { haptics } from "../utils/haptics";
 import imgLakeDistrict from "../assets/images/lake_district.png";
 import imgCoastalVan from "../assets/images/coastal_van.jpg";
 import { useTranslation } from "react-i18next";
-import imgUnsplash14702407312737821a6eeb6bd from "../assets/images/unsplash_1470240731273-7821a6eeb6bd.jpg";
-import imgUnsplash1543872084c7bd3822856f from "../assets/images/unsplash_1543872084-c7bd3822856f.jpg";
-import imgUnsplash14338325970464f10e10ac764 from "../assets/images/unsplash_1433832597046-4f10e10ac764.jpg";
 
 interface CountrysideItem {
   id: string;
@@ -17,9 +14,9 @@ interface CountrysideItem {
 }
 
 const itemsData: CountrysideItem[] = [
-  { id: "cotswolds-mist", imageUrl: {imgUnsplash14702407312737821a6eeb6bd} },
-  { id: "ivy-cottage", imageUrl: {imgUnsplash1543872084c7bd3822856f} },
-  { id: "yorkshire-hills", imageUrl: {imgUnsplash14338325970464f10e10ac764} },
+  { id: "cotswolds-mist", imageUrl: "https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?q=80&w=1200&auto=format&fit=crop" },
+  { id: "ivy-cottage", imageUrl: "https://images.unsplash.com/photo-1543872084-c7bd3822856f?q=80&w=1200&auto=format&fit=crop" },
+  { id: "yorkshire-hills", imageUrl: "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?q=80&w=1200&auto=format&fit=crop" },
   { id: "lake-district", imageUrl: imgLakeDistrict },
   { id: "coastal-road-trip", imageUrl: imgCoastalVan },
 ];

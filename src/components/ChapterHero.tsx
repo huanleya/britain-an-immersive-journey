@@ -5,8 +5,6 @@ import { ArrowDown } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslation } from "react-i18next";
-import imgUnsplash151363526997559663e0ac1ad from "../assets/images/unsplash_1513635269975-59663e0ac1ad.jpg";
-import imgUnsplash151815667718095a2893f3e9f from "../assets/images/unsplash_1518156677180-95a2893f3e9f.jpg";
 
 // Ensure GSAP plugins are registered safely
 if (typeof window !== "undefined") {
@@ -91,7 +89,7 @@ export const ChapterHero: React.FC<ChapterHeroProps> = ({ onExplore }) => {
         <div className="absolute inset-0 bg-[#050505]/35 z-10" /> {/* Ambient overlay */}
         
         <img
-          src={imgUnsplash151363526997559663e0ac1ad}
+          src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=1920&auto=format&fit=crop"
           alt="Cinematic drone photography of London rooftops in the morning mist at sunrise"
           className="w-full h-full object-cover select-none pointer-events-none"
           referrerPolicy="no-referrer"
@@ -107,7 +105,7 @@ export const ChapterHero: React.FC<ChapterHeroProps> = ({ onExplore }) => {
         className="absolute inset-0 w-full h-[110%] pointer-events-none mix-blend-screen opacity-[0.12] z-10"
       >
         <img
-          src={imgUnsplash151815667718095a2893f3e9f}
+          src="https://images.unsplash.com/photo-1518156677180-95a2893f3e9f?q=80&w=1000&auto=format&fit=crop"
           alt="Atmospheric light flare dust overlay"
           className="w-full h-full object-cover select-none pointer-events-none"
           referrerPolicy="no-referrer"
