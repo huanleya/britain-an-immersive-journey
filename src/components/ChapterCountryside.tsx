@@ -6,6 +6,7 @@ import { ParallaxImage } from "./ParallaxImage";
 import { haptics } from "../utils/haptics";
 import imgLakeDistrict from "../assets/images/lake_district.png";
 import imgCoastalVan from "../assets/images/coastal_van.jpg";
+import imgYorkshireDales from "../assets/images/yorkshire_dales.png";
 import { useTranslation } from "react-i18next";
 
 interface CountrysideItem {
@@ -16,7 +17,7 @@ interface CountrysideItem {
 const itemsData: CountrysideItem[] = [
   { id: "cotswolds-mist", imageUrl: "https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?q=80&w=1200&auto=format&fit=crop" },
   { id: "ivy-cottage", imageUrl: "https://images.unsplash.com/photo-1543872084-c7bd3822856f?q=80&w=1200&auto=format&fit=crop" },
-  { id: "yorkshire-hills", imageUrl: "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?q=80&w=1200&auto=format&fit=crop" },
+  { id: "yorkshire-hills", imageUrl: imgYorkshireDales },
   { id: "lake-district", imageUrl: imgLakeDistrict },
   { id: "coastal-road-trip", imageUrl: imgCoastalVan },
 ];
