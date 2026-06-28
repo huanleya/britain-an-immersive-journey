@@ -180,7 +180,7 @@ export const ChapterCountryside: React.FC = () => {
                   src={item.imageUrl}
                   alt={item.title}
                 />
-                <div className="absolute top-4 left-4 z-20 bg-black/60 backdrop-blur-md px-3.5 py-1.5 rounded border border-white/5 shadow-lg">
+                <div className="absolute top-4 left-4 z-20 bg-black/60 backdrop-blur-md px-3.5 py-1.5 rounded border border-white/5 shadow-lg pointer-events-none">
                   <span className="font-mono text-[10px] text-[#C9B07C] tracking-widest uppercase font-semibold">
                     {item.coords}
                   </span>

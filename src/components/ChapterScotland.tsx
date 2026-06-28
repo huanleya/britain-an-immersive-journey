@@ -55,7 +55,6 @@ const stories: ScotlandStory[] = [
 
 export const ChapterScotland: React.FC = () => {
   const [activeStep, setActiveStep] = useState(0);
-  const [isZoomed, setIsZoomed] = useState(false);
 
   return (
     <section
@@ -150,10 +149,7 @@ export const ChapterScotland: React.FC = () => {
         </div>
 
         {/* Right Side: Pinned Interactive Viewport Frame */}
-        <div 
-          onDoubleClick={() => { haptics.mediumClick(); setIsZoomed(true); }}
-          className="lg:col-span-7 w-full lg:sticky lg:top-28 relative aspect-[16/10] md:aspect-[16/9] rounded overflow-hidden border border-[#1D1D1D] shadow-2xl z-10 cursor-zoom-in group"
-        >
+        <div className="lg:col-span-7 w-full lg:sticky lg:top-28 relative aspect-[16/10] md:aspect-[16/9] rounded overflow-hidden border border-[#1D1D1D] shadow-2xl z-10">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeStep}
@@ -164,7 +160,7 @@ export const ChapterScotland: React.FC = () => {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
               {/* Overcast gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#020202]/45 via-transparent to-[#020202]/35 z-10" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#020202]/45 via-transparent to-[#020202]/35 z-10 pointer-events-none" />
               
               <ParallaxImage
                 src={stories[activeStep].imageUrl}
@@ -174,42 +170,15 @@ export const ChapterScotland: React.FC = () => {
           </AnimatePresence>
 
           {/* Floating diagnostic lens HUD badge */}
-          <div className="absolute bottom-4 right-4 z-20 bg-black/60 backdrop-blur-md border border-[#1D1D1D] px-3.5 py-1.5 rounded flex items-center gap-3">
+          <div className="absolute bottom-4 right-4 z-20 bg-black/60 backdrop-blur-md border border-[#1D1D1D] px-3.5 py-1.5 rounded flex items-center gap-3 pointer-events-none">
             <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping" />
             <span className="font-mono text-[9px] tracking-[0.2em] text-[#F6F6F6] uppercase">
               CAMERA LENS LOCKED
             </span>
           </div>
-          
-          {/* Hover indicator */}
-          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500 z-20 flex items-center justify-center pointer-events-none">
-             <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white/80 font-mono text-xs tracking-widest uppercase border border-white/20 bg-black/40 px-4 py-2 rounded-full backdrop-blur-sm">Double Click to View</span>
-          </div>
         </div>
 
       </div>
-
-      <AnimatePresence>
-        {isZoomed && (
-          <motion.div 
-            initial={{ opacity: 0 }} 
-            animate={{ opacity: 1 }} 
-            exit={{ opacity: 0 }}
-            onClick={() => { haptics.lightTap(); setIsZoomed(false); }}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-md p-4 md:p-8 cursor-zoom-out"
-          >
-            <motion.img 
-              src={stories[activeStep].imageUrl} 
-              alt={stories[activeStep].title}
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="max-w-full max-h-full object-contain rounded shadow-2xl"
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
     </section>
   );
 };
