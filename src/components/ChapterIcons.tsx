@@ -51,7 +51,7 @@ const landmarks: Landmark[] = [
     sub: "The Millennium Wheel",
     location: "Lambeth, London",
     description: "The giant, cantilevered observation wheel situated on the South Bank of the River Thames. Originally conceived as a celebration of the turn of the millennium, this elegant tensioned steel-and-glass wheel offers an expansive, breathtaking 360-degree panorama of the entire metropolis. As day turns to dusk, the wheel transitions gracefully, lighting up the purple twilight and offering a striking modern contrast to the ancient spires of Westminster.",
-    imageUrl: "https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?q=80&w=1920&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=1920&auto=format&fit=crop",
   },
 ];
 
