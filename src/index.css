@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Custom Fluid Typography Scale using clamp() for spectacular editorial impact */
+  --font-size-xs: clamp(0.7rem, 0.05vw + 0.68rem, 0.85rem);
+  --font-size-sm: clamp(0.85rem, 0.1vw + 0.8rem, 1rem);
+  --font-size-base: clamp(0.95rem, 0.15vw + 0.9rem, 1.15rem);
+  --font-size-lg: clamp(1.1rem, 0.2vw + 1.05rem, 1.35rem);
+  --font-size-xl: clamp(1.25rem, 0.3vw + 1.15rem, 1.6rem);
+  --font-size-2xl: clamp(1.6rem, 0.6vw + 1.45rem, 2.3rem);
+  --font-size-3xl: clamp(2rem, 1.2vw + 1.7rem, 3.25rem);
+  --font-size-4xl: clamp(2.75rem, 2vw + 2.25rem, 4.75rem);
+  --font-size-5xl: clamp(3.75rem, 3.5vw + 2.85rem, 6.75rem);
+  --font-size-6xl: clamp(5rem, 5.5vw + 3.75rem, 9rem);
+  --font-size-7xl: clamp(6rem, 7.5vw + 4.5rem, 11rem);
+  --font-size-8xl: clamp(7.5rem, 9.5vw + 5.5rem, 13.5rem);
+  --font-size-9xl: clamp(9rem, 12vw + 6rem, 17.5rem);
+}
+
+/* Base body styles for elegant, dense editorial layout */
+body {
+  font-family: var(--font-sans);
+  line-height: 1.68;
+  letter-spacing: -0.011em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure all sans body elements retain refined line-height and letter-spacing */
+p, .font-sans, .text-sm, .text-base, .text-lg {
+  line-height: 1.68;
+  letter-spacing: -0.011em;
+}
+
+/* Stately headlines look majestic with tighter letter-spacing and lighter weights */
+h1, h2, h3, h4, h5, h6, .font-serif {
+  letter-spacing: -0.022em;
+  font-weight: 400;
+}
+
+/* Custom premium ultra-thin exclusive scrollbar */
+::-webkit-scrollbar {
+  width: 3.5px;
+  height: 3.5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(201, 176, 124, 0.4);
+  border-radius: 9999px;
+  transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(201, 176, 124, 0.85);
+}
+
+.light-mode ::-webkit-scrollbar-thumb,
+.light-mode::-webkit-scrollbar-thumb {
+  background-color: rgba(164, 130, 69, 0.4);
+}
+
+.light-mode ::-webkit-scrollbar-thumb:hover,
+.light-mode::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(164, 130, 69, 0.85);
+}
+
+/* Firefox standard scrollbar styling */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(201, 176, 124, 0.4) transparent;
+}
+
+html.light-mode {
+  scrollbar-color: rgba(164, 130, 69, 0.4) transparent;
+}
+
+/* Custom scrollbar utility for container elements */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Hide native cursor on devices with a mouse/trackpad to enable the custom smooth cursor */
+@media (pointer: fine) {
+  html, body, a, button, [role="button"], img, .cursor-pointer, input, select {
+    cursor: none !important;
+  }
+}
+
+/* Elegant Theme CSS Custom Properties */
+html {
+  --bg-primary: #050505;
+  --bg-scotland: #020202;
+  --bg-nightfall: #030303;
+  --bg-secondary: #111111;
+  --border-primary: #1D1D1D;
+  --text-primary: #F6F6F6;
+  --text-secondary: #8B8B8B;
+  --text-accent: #C9B07C;
+}
+
+/* Fallback for initial load or if JS is disabled */
+html.light-mode {
+  --bg-primary: #faf9f6;
+  --bg-scotland: #faf9f6;
+  --bg-nightfall: #faf9f6;
+  --bg-secondary: #f5f3ed;
+  --border-primary: #e5e3db;
+  --text-primary: #1a1917;
+  --text-secondary: #6a6862;
+  --text-accent: #a48245;
+}
+
+/* Elegant Light Mode overrides mapped to CSS variables */
+html, body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+section,
+div.bg-\[\#050505\],
+section.bg-\[\#050505\],
+div.bg-\[\#020202\],
+section.bg-\[\#020202\],
+div.bg-\[\#030303\],
+section.bg-\[\#030303\],
+.bg-\[\#050505\],
+.bg-\[\#020202\],
+.bg-\[\#030303\],
+.bg-black {
+  background-color: var(--bg-primary) !important;
+}
+
+/* Specific background overrides for different chapters to retain distinct atmospheres */
+html:not(.light-mode) div.bg-\[\#020202\],
+html:not(.light-mode) section.bg-\[\#020202\],
+html:not(.light-mode) .bg-\[\#020202\] {
+  background-color: var(--bg-scotland) !important;
+}
+
+html:not(.light-mode) div.bg-\[\#030303\],
+html:not(.light-mode) section.bg-\[\#030303\],
+html:not(.light-mode) .bg-\[\#030303\] {
+  background-color: var(--bg-nightfall) !important;
+}
+
+.bg-\[\#111111\],
+.bg-\[\#1D1D1D\],
+.bg-zinc-900 {
+  background-color: var(--bg-secondary) !important;
+}
+
+.border-\[\#1D1D1D\],
+.border-\[\#1d1d1d\],
+.border-zinc-800 {
+  border-color: var(--border-primary) !important;
+}
+
+.text-\[\#F6F6F6\],
+.text-\[\#f6f6f6\],
+.text-white,
+.text-zinc-100 {
+  color: var(--text-primary) !important;
+}
+
+.text-\[\#8B8B8B\],
+.text-\[\#8b8b8b\],
+.text-zinc-400,
+.text-gray-400 {
+  color: var(--text-secondary) !important;
+}
+
+.text-\[\#C9B07C\],
+.text-\[\#c9b07c\] {
+  color: var(--text-accent) !important;
+}
+
+.border-\[\#C9B07C\],
+.border-\[\#c9b07c\] {
+  border-color: var(--text-accent) !important;
+}
+
+.hover\:border-\[\#C9B07C\]:hover,
+.hover\:border-\[\#c9b07c\]:hover {
+  border-color: var(--text-accent) !important;
+}
+
+.hover\:text-\[\#C9B07C\]:hover,
+.hover\:text-\[\#c9b07c\]:hover {
+  color: var(--text-accent) !important;
+}
+
+.bg-\[\#C9B07C\],
+.bg-\[\#c9b07c\] {
+  background-color: var(--text-accent) !important;
+}
+
+/* ThreeBackground canvas rendering in light mode */
+.light-mode canvas {
+  opacity: 0.35 !important;
+  mix-blend-mode: multiply !important;
+}
+
+
