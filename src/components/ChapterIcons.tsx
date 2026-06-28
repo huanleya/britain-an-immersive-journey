@@ -120,7 +120,7 @@ const LandmarkSection: React.FC<LandmarkSectionProps> = ({ landmark, index }) =>
         
         {/* Landmark Image Frame (takes 7 cols) */}
         <div 
-          onClick={() => { haptics.lightTap(); setIsZoomed(true); }}
+          onDoubleClick={() => { haptics.mediumClick(); setIsZoomed(true); }}
           className={`lg:col-span-7 relative h-[400px] md:h-[550px] rounded overflow-hidden border border-[#1D1D1D] shadow-2xl cursor-zoom-in group ${isEven ? "lg:order-1" : "lg:order-2"}`}
         >
           {/* Cover Mask */}
@@ -144,7 +144,7 @@ const LandmarkSection: React.FC<LandmarkSectionProps> = ({ landmark, index }) =>
           
           {/* Hover indicator */}
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500 z-20 flex items-center justify-center pointer-events-none">
-             <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white/80 font-mono text-xs tracking-widest uppercase border border-white/20 bg-black/40 px-4 py-2 rounded-full backdrop-blur-sm">View</span>
+             <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white/80 font-mono text-xs tracking-widest uppercase border border-white/20 bg-black/40 px-4 py-2 rounded-full backdrop-blur-sm">Double Click to View</span>
           </div>
         </div>
 
