@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { SplitText } from "./SplitText";
 import { useTranslation } from "react-i18next";
+import imgUnsplash1508739773434c26b3d09e071 from "../assets/images/unsplash_1508739773434-c26b3d09e071.jpg";
 
 interface Star {
   id: number;
@@ -98,7 +99,7 @@ export const ChapterNightfall: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#030303]/60 to-[#030303] z-10" />
         {isInView && (
           <img
-            src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?q=80&w=1920&auto=format&fit=crop"
+            src={imgUnsplash1508739773434c26b3d09e071}
             alt="London illuminated skyline long exposure reflecting in Thames at night"
             onLoad={() => setIsLoaded(true)}
             className={`w-full h-full object-cover transition-all duration-[1500ms] ease-out ${
