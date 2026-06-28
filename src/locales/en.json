@@ -1,0 +1,232 @@
+{
+  "chapterHero": {
+    "prologue": "Chapter 01 — Prologue",
+    "title": "BRITAIN",
+    "description": "An immersive interactive documentary exploring the eternal soul of Britain—from the early morning mist of metropolitan London, through the honey-colored villages of the Cotswolds, to the wild, rugged highlands of Scotland. Scroll to begin a timeless journey of light, architecture, and memory.",
+    "scroll_to_begin": "Scroll to Begin"
+  },
+  "chapterAwakening": {
+    "chapter_title": "Chapter 02 — The Awakening City",
+    "title_1": "The Awakening",
+    "title_2": "City",
+    "text_1": "As the golden morning sun slowly pierces through the dense British fog, London’s majestic rooftops and historic chimney pots are gradually uncovered in the soft daylight. The metropolis awakens in absolute, breathtaking silence, draped in a delicate veil of early morning mist that hangs low over the quiet Thames.",
+    "quote": "\"The river glides at his own sweet will: Dear God! the very houses seem asleep; And all that mighty heart is lying still!\"",
+    "text_2": "Over the centuries, the ancient red brick, weathered Portland stone, and traditional masonry structures of these historic mews and townhouses have absorbed both the rain and the soft, golden English sun. Each architectural layer reflects a rich tapestry of history, capturing quiet stories of generations who walked these cobbled streets under the changing British sky.",
+    "scroll_stabilized": "Scroll Stabilized for Reading",
+    "camera_info": "SONY A7R V • 35MM F1.8 • RAW"
+  },
+  "chapterIcons": {
+    "chapter_title": "Chapter 04 — Icons of Britain",
+    "title": "Monoliths of Heritage",
+    "double_click": "Double Click to View",
+    "landmarks": [
+      {
+        "name": "Tower Bridge",
+        "sub": "Suspension Bascule Bridge",
+        "location": "Tower Hamlets, London",
+        "description": "Built between 1886 and 1894, this iconic suspension and bascule bridge blends monumental Victorian stone masonry with advanced steel-frame suspension engineering. Clad in Cornish granite and Portland stone to protect the structural ironwork, it remains a vital artery of London. The bridge gracefully spans the Thames, connecting the city's ancient maritime past and industrial revolution heritage with its dynamic, modern architectural vision."
+      },
+      {
+        "name": "Westminster",
+        "sub": "Palace of Westminster",
+        "location": "Westminster, London",
+        "description": "The historic and political heart of British democracy, situated majestically on the north bank of the River Thames. Rising above the water with intricate golden stone carvings, towering spires, and grand gothic arches, the Palace is a UNESCO World Heritage site representing centuries of political and artistic heritage. It hosts the Houses of Parliament, where the echoes of defining historical speeches linger in magnificent chambers designed by Charles Barry."
+      },
+      {
+        "name": "St Paul's",
+        "sub": "St Paul's Cathedral",
+        "location": "City of London",
+        "description": "An architectural masterpiece designed by Sir Christopher Wren, its breathtaking dome has dominated the City of London skyline for over 300 years. Built in the late 17th century as a symbol of London's resurrection after the Great Fire of 1666, it represents English Baroque design at its most supreme. Sunlight filters beautifully through the high clerestory windows, illuminating magnificent mosaics, quiet whispering galleries, and centuries of national remembrance."
+      },
+      {
+        "name": "London Eye",
+        "sub": "The Millennium Wheel",
+        "location": "Lambeth, London",
+        "description": "The giant, cantilevered observation wheel situated on the South Bank of the River Thames. Originally conceived as a celebration of the turn of the millennium, this elegant tensioned steel-and-glass wheel offers an expansive, breathtaking 360-degree panorama of the entire metropolis. As day turns to dusk, the wheel transitions gracefully, lighting up the purple twilight and offering a striking modern contrast to the ancient spires of Westminster."
+      },
+      {
+        "name": "Big Ben",
+        "sub": "Elizabeth Tower",
+        "description": "The iconic clock tower and the gothic majesty of the Houses of Parliament, symbols of British resilience and democracy standing tall on the banks of the River Thames.",
+        "location": "Westminster, London"
+      },
+      {
+        "name": "Buckingham",
+        "sub": "Buckingham Palace",
+        "description": "The London residence and administrative headquarters of the monarch of the United Kingdom, renowned for its neoclassical architecture and the Changing of the Guard.",
+        "location": "Westminster, London"
+      },
+      {
+        "name": "Edinburgh",
+        "sub": "Edinburgh Castle",
+        "description": "A historic fortress dominating the skyline of Scotland's capital from its position on Castle Rock. It has played a pivotal role in Scottish history for over a millennium.",
+        "location": "Edinburgh, Scotland"
+      },
+      {
+        "name": "British Museum",
+        "sub": "The British Museum",
+        "description": "A public museum dedicated to human history, art and culture, housing a permanent collection of some eight million works, among the largest and most comprehensive in existence.",
+        "location": "Bloomsbury, London"
+      }
+    ]
+  },
+  "chapterScotland": {
+    "chapter_title": "Chapter 06 — Northern Kingdom",
+    "title_1": "The Highland",
+    "title_2": "Shadows",
+    "double_click": "Double Click to View",
+    "camera_info": "DJI MAVIC 3 PRO • HASSELBLAD • RAW",
+    "stories": [
+      {
+        "title": "Eilean Donan Castle",
+        "description": "Rising dramatically from the cold, dark tidal waters of three meeting lochs, the ancient stone fortifications of Eilean Donan stand as an eternal sentinel. Framed by majestic misty peaks and pine-covered shores, the castle's iconic silhouette tells tales of legendary Highland clans, hard-fought wars, and timeless architectural endurance. As fog wraps around its ancient battlements, the spirit of medieval Scotland is kept alive within its rugged walls.",
+        "accent": "Kintail Highlands"
+      },
+      {
+        "title": "The Pass of Glencoe",
+        "description": "An awe-inspiring volcanic valley of immense scale, flanked by sheer, brooding mountains and deep ravines. Heavy, low-hanging clouds constantly spill over the rocky ridges of the Three Sisters, sweeping cold rain, mountain breezes, and a thick morning fog across empty paths paved by ancient footsteps. This dramatic, untamed landscape encapsulates the solemn majesty and untamable wildness of the Scottish Highlands.",
+        "accent": "Argyll & Bute"
+      },
+      {
+        "title": "The Sligachan Stone Bridge",
+        "description": "An old, beautifully arched stone bridge cutting through the wild, sweeping landscapes beneath the Red Cuillin mountains on the Isle of Skye. Cold mountain water flows violently and clearly underneath, originating from high, mist-enshrouded peaks enveloped in heavy rolling gray fog. This historic bridge binds the primeval volcanic geology of Skye with traditional masonry, serving as a crossing between physical worlds and legend.",
+        "accent": "Isle of Skye"
+      },
+      {
+        "title": "The Old Man of Storr",
+        "description": "A monumental, jagged basalt rock pinnacle rising abruptly from the steep, grassy hillside of the Trotternish peninsula on the Isle of Skye. Standing tall against a moody, misty sky, these dramatic ancient rock formations look like they belong to a legendary, untamed prehistoric world.",
+        "accent": "Isle of Skye"
+      },
+      {
+        "title": "Loch Ness",
+        "description": "A deep, dark, and narrow freshwater loch stretching through the Scottish Highlands. Surrounded by steep pine-covered hills and the romantic ruins of Urquhart Castle, the still waters are often cloaked in thick morning fog. It is a place evoking deep mystery, folklore, and the enduring legend of the loch's elusive monster.",
+        "accent": "Scottish Highlands"
+      }
+    ]
+  },
+  "chapterCountryside": {
+    "chapter_title": "Chapter 05 — The Serene Escape",
+    "title": "English Countryside",
+    "scroll": "Scroll to Explore",
+    "double_click": "Double Click to View",
+    "items": [
+      {
+        "title": "Cotswold Mornings",
+        "description": "Centuries-old, hand-piled dry stone walls wind gracefully across damp, rolling green valleys. A thick, ethereal fog hovers gently above the lush pasturelands, slowly lifting as the morning advances to reflect the soft, ambient amber glow of a rising sun. In these quiet hours, the countryside feels entirely untouched by time, preserving a peaceful rural serenity.",
+        "coords": "51.8333° N • 1.8333° W"
+      },
+      {
+        "title": "The Stone Cottage",
+        "description": "An authentic, beautifully weathered traditional English cottage crafted from local, honey-colored Cotswold limestone. Vibrant climbing ivy wraps around the rustic timber door frames and leaded windows, nestled under a steep, moss-kissed slate roof. As the afternoon sun begins to set, the warm stone absorbs the late golden rays, exuding a comforting sense of home and heritage.",
+        "coords": "51.9818° N • 1.7303° W"
+      },
+      {
+        "title": "Yorkshire Dales",
+        "description": "Expansive, rugged high plains stretch out under dramatic, ever-changing overcast Northern skies. Ancient stone sheep pens and traditional barns dot the wild, heather-filled meadows, standing as silent monuments to a quiet and persistent rural way of life that has weathered centuries of harsh winds and winter snows in Northern England.",
+        "coords": "54.2238° N • 2.0544° W"
+      },
+      {
+        "title": "Lake District",
+        "description": "England’s most famous national park, characterized by deep glacial lakes and rugged fell mountains. Serene, mirror-like waters reflect the dramatic moody clouds and majestic green peaks. This tranquil, pristine landscape has inspired generations of poets and writers, capturing the romantic essence of the British wilderness.",
+        "coords": "54.4609° N • 3.0886° W"
+      },
+      {
+        "title": "Coastal Road Trip",
+        "description": "The classic British seaside holiday spirit lives on. A vintage campervan rests near the sandy shores, bringing back the nostalgia of long summer drives along the breathtaking coastal routes of Cornwall and Devon. The vibrant surf culture and carefree spirit seamlessly blend with the stunning ocean horizons.",
+        "coords": "50.4155° N • 5.0737° W"
+      }
+    ]
+  },
+  "chapterEnding": {
+    "epilogue": "Epilogue",
+    "quote1": "\"Britain is not simply seen.",
+    "quote2": "It is experienced.\"",
+    "completed": "A DOCUMENTARY STORY COMPLETED",
+    "explore_again": "Explore Again",
+    "contact": "Contact",
+    "credits": "Credits",
+    "get_in_touch": "Get in Touch",
+    "contact_desc": "This cinematic immersive documentary was created to push the boundaries of digital narrative experiences. For inquiries regarding licensing, curation, or web consulting, reach out through our digital desk:",
+    "production_credits": "Production Credits",
+    "author": "Author",
+    "creative_direction": "Creative Direction",
+    "cinematography": "Cinematography (RAW)",
+    "interactive_engineering": "Interactive Engineering",
+    "symphonic_ambience": "Symphonic Ambience",
+    "designed_in": "\"Designed in the spirit of British luxury and documentary realism.\"",
+    "close_window": "Close Window"
+  },
+  "navbar": {
+    "britain": "Britain",
+    "chapter": "Chapter",
+    "dark_theme": "Dark Theme",
+    "light_theme": "Light Theme",
+    "switch_dark": "Switch to Dark Mode",
+    "switch_light": "Switch to Light Mode",
+    "mute_ambience": "Mute Ambience",
+    "play_ambience": "Play Ambience",
+    "disable_sound": "Disable Ambient Sound",
+    "enable_sound": "Enable Ambient Sound",
+    "chapters": [
+      {
+        "num": "01",
+        "name": "Prologue"
+      },
+      {
+        "num": "02",
+        "name": "The Awakening"
+      },
+      {
+        "num": "03",
+        "name": "Victorian London"
+      },
+      {
+        "num": "04",
+        "name": "Monoliths & Icons"
+      },
+      {
+        "num": "05",
+        "name": "The Countryside"
+      },
+      {
+        "num": "06",
+        "name": "Scotland Heights"
+      },
+      {
+        "num": "07",
+        "name": "Nightfall"
+      }
+    ]
+  },
+  "chapterVictorian": {
+    "chapter_title": "Chapter 03 — Victorian Heritage",
+    "title": "Victorian London",
+    "description": "Stately Victorian townhouses wrapped in elaborate, dark wrought iron railings line the peaceful residential streets of Chelsea and Kensington. Wet asphalt after a sudden heavy rain shower glistens in the twilight, glowing with the rich, ambient amber reflections of heritage streetlamps. The deep crimson pop of an iconic K6 telephone kiosk or a passing double-decker bus creates a striking, unforgettable contrast against the moody, slate-gray skies. This delicate interplay of texture, color, and vintage atmosphere forms the eternal visual pulse of historical London, inviting you to wander through paths carved by time.",
+    "scroll": "Scroll Stabilized for Reading",
+    "img1_title": "Westminster crossing",
+    "img1_desc": "03.A — Dynamic Contrast",
+    "img2_title": "Rain Reflections",
+    "img2_desc": "London W1 • England",
+    "img3_title": "Wrought Iron Facades",
+    "img3_desc": "03.C — W11 Townhouses",
+    "modern_chapter_title": "CHAPTER 03 EXT — ERA SYMPHONY",
+    "modern_title": "Modern Metropolis Perspectives",
+    "img4_title": "Thames Mega Port",
+    "img4_desc": "03.D — Industrial Contrast",
+    "img5_title": "Street Exterior",
+    "img5_desc": "England • Central London",
+    "img6_title": "Sunset Glow",
+    "img6_desc": "03.F — Westminster Dusk"
+  },
+  "chapterNightfall": {
+    "chapter_title": "Chapter 07 — Nightfall",
+    "title_part1": "The River of",
+    "title_part2": "Shadows",
+    "description": "As the twilight of the blue hour deepens, the city’s sharp concrete edges dissolve into soft, artistic shadows. Under an endless, shimmering starlit dome, the historic River Thames flows like a dark velvet ribbon, mirroring centuries of legendary stories illuminated by the vibrant, golden glows of modern skyscrapers. The hectic metropolitan pace slows to a gentle murmur. The glowing skyline reflects beautifully off the calm ripples of the water, and a peaceful, majestic silence settles over the ancient city once more, bridging its rich, storied past with an enduring, brilliant future.",
+    "scroll": "Scroll Stabilized for Reading",
+    "status_label": "Metropolis Status",
+    "status_value": "Lulled to Sleep",
+    "time_label": "Local Time",
+    "time_value": "23:00 GMT"
+  }
+}

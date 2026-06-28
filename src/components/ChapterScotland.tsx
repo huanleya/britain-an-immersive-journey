@@ -7,53 +7,24 @@ import imgEileanDonan from "../assets/images/eilean_donan.png";
 import imgGlencoe from "../assets/images/glencoe.png";
 import imgStorr from "../assets/images/storr.png";
 import imgLochNess from "../assets/images/loch_ness.png";
+import imgSligachan from "../assets/images/sligachan.jpg";
+import { useTranslation } from "react-i18next";
+
 interface ScotlandStory {
   id: string;
-  title: string;
-  description: string;
   imageUrl: string;
-  accent: string;
 }
 
-const stories: ScotlandStory[] = [
-  {
-    id: "scot-castle",
-    title: "Eilean Donan Castle",
-    description: "Rising dramatically from the cold, dark tidal waters of three meeting lochs, the ancient stone fortifications of Eilean Donan stand as an eternal sentinel. Framed by majestic misty peaks and pine-covered shores, the castle's iconic silhouette tells tales of legendary Highland clans, hard-fought wars, and timeless architectural endurance. As fog wraps around its ancient battlements, the spirit of medieval Scotland is kept alive within its rugged walls.",
-    imageUrl: imgEileanDonan,
-    accent: "Kintail Highlands",
-  },
-  {
-    id: "scot-glencoe",
-    title: "The Pass of Glencoe",
-    description: "An awe-inspiring volcanic valley of immense scale, flanked by sheer, brooding mountains and deep ravines. Heavy, low-hanging clouds constantly spill over the rocky ridges of the Three Sisters, sweeping cold rain, mountain breezes, and a thick morning fog across empty paths paved by ancient footsteps. This dramatic, untamed landscape encapsulates the solemn majesty and untamable wildness of the Scottish Highlands.",
-    imageUrl: imgGlencoe,
-    accent: "Argyll & Bute",
-  },
-  {
-    id: "scot-bridge",
-    title: "The Sligachan Stone Bridge",
-    description: "An old, beautifully arched stone bridge cutting through the wild, sweeping landscapes beneath the Red Cuillin mountains on the Isle of Skye. Cold mountain water flows violently and clearly underneath, originating from high, mist-enshrouded peaks enveloped in heavy rolling gray fog. This historic bridge binds the primeval volcanic geology of Skye with traditional masonry, serving as a crossing between physical worlds and legend.",
-    imageUrl: "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?q=80&w=1200&auto=format&fit=crop",
-    accent: "Isle of Skye",
-  },
-  {
-    id: "scot-storr",
-    title: "The Old Man of Storr",
-    description: "A monumental, jagged basalt rock pinnacle rising abruptly from the steep, grassy hillside of the Trotternish peninsula on the Isle of Skye. Standing tall against a moody, misty sky, these dramatic ancient rock formations look like they belong to a legendary, untamed prehistoric world.",
-    imageUrl: imgStorr,
-    accent: "Isle of Skye",
-  },
-  {
-    id: "scot-lochness",
-    title: "Loch Ness",
-    description: "A deep, dark, and narrow freshwater loch stretching through the Scottish Highlands. Surrounded by steep pine-covered hills and the romantic ruins of Urquhart Castle, the still waters are often cloaked in thick morning fog. It is a place evoking deep mystery, folklore, and the enduring legend of the loch's elusive monster.",
-    imageUrl: imgLochNess,
-    accent: "Scottish Highlands",
-  },
+const storiesData: ScotlandStory[] = [
+  { id: "scot-castle", imageUrl: imgEileanDonan },
+  { id: "scot-glencoe", imageUrl: imgGlencoe },
+  { id: "scot-bridge", imageUrl: imgSligachan },
+  { id: "scot-storr", imageUrl: imgStorr },
+  { id: "scot-lochness", imageUrl: imgLochNess },
 ];
 
 export const ChapterScotland: React.FC = () => {
+  const { t } = useTranslation();
   const [activeStep, setActiveStep] = useState(0);
 
   return (
@@ -68,19 +39,19 @@ export const ChapterScotland: React.FC = () => {
         <div className="lg:col-span-5 flex flex-col gap-8 lg:sticky lg:top-28 z-20">
           <div className="flex flex-col gap-4">
             <span className="text-[10px] tracking-[0.4em] text-[#C9B07C] uppercase font-mono block">
-              Chapter 06 — Northern Kingdom
+              {t('chapterScotland.chapter_title')}
             </span>
             <h2 className="text-4xl md:text-6xl font-serif text-[#F6F6F6] font-normal leading-none tracking-wide">
-              <SplitText text="The Highland" type="words" />
+              <SplitText text={t('chapterScotland.title_1')} type="words" />
               <br />
               <span className="font-serif italic text-[#C9B07C]">
-                <SplitText text="Shadows" type="words" delayOffset={0.25} />
+                <SplitText text={t('chapterScotland.title_2')} type="words" delayOffset={0.25} />
               </span>
             </h2>
           </div>
 
           <div className="flex flex-col gap-6 mt-6">
-            {stories.map((story, index) => {
+            {storiesData.map((story, index) => {
               const isActive = activeStep === index;
               return (
                 <button
@@ -107,7 +78,7 @@ export const ChapterScotland: React.FC = () => {
                         isActive ? "text-[#F6F6F6]" : "text-[#8B8B8B] group-hover:text-[#F6F6F6]"
                       }`}
                     >
-                      {story.title}
+                      {t(`chapterScotland.stories.${index}.title`)}
                     </h3>
                     
                     {/* Expandable description card */}
@@ -124,12 +95,12 @@ export const ChapterScotland: React.FC = () => {
                       <SplitText
                         key={story.id}
                         type="lines"
-                        text={story.description}
+                        text={t(`chapterScotland.stories.${index}.description`)}
                         className="text-sm md:text-base text-[#D1D1D1] font-sans font-light leading-relaxed mb-3"
                       />
                       <span className="font-mono text-[10px] md:text-xs text-[#C9B07C] tracking-widest uppercase flex items-center gap-1.5 font-semibold">
                         <span className="w-1.5 h-1.5 rounded-full bg-[#C9B07C] animate-pulse" />
-                        {story.accent} • Scroll Stabilized
+                        {t(`chapterScotland.stories.${index}.accent`)} • {t('chapterAwakening.scroll_stabilized')}
                       </span>
                     </motion.div>
                   </div>
@@ -163,8 +134,8 @@ export const ChapterScotland: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-[#020202]/45 via-transparent to-[#020202]/35 z-10 pointer-events-none" />
               
               <ParallaxImage
-                src={stories[activeStep].imageUrl}
-                alt={stories[activeStep].title}
+                src={storiesData[activeStep].imageUrl}
+                alt={t(`chapterScotland.stories.${activeStep}.title`)}
               />
             </motion.div>
           </AnimatePresence>

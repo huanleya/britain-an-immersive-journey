@@ -2,8 +2,10 @@ import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { SplitText } from "./SplitText";
 import { ParallaxImage } from "./ParallaxImage";
+import { useTranslation } from "react-i18next";
 
 export const ChapterAwakening: React.FC = () => {
+  const { t } = useTranslation();
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -33,14 +35,14 @@ export const ChapterAwakening: React.FC = () => {
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 1 }}
           >
-            Chapter 02 — The Awakening City
+            {t('chapterAwakening.chapter_title')}
           </motion.span>
 
           <h2 className="text-3xl md:text-5xl font-serif text-[#F6F6F6] leading-[1.15] tracking-wide">
-            <SplitText text="The Awakening" type="words" delayOffset={0.1} />
+            <SplitText text={t('chapterAwakening.title_1')} type="words" delayOffset={0.1} />
             <br />
             <span className="font-serif italic text-[#C9B07C]">
-              <SplitText text="City" type="words" delayOffset={0.3} />
+              <SplitText text={t('chapterAwakening.title_2')} type="words" delayOffset={0.3} />
             </span>
           </h2>
 
@@ -55,22 +57,22 @@ export const ChapterAwakening: React.FC = () => {
           <div data-slow-scroll="true" className="flex flex-col gap-6 text-sm md:text-base lg:text-lg text-[#B4B4B4] font-sans font-light leading-relaxed max-w-xl">
             <SplitText
               type="lines"
-              text="As the golden morning sun slowly pierces through the dense British fog, London’s majestic rooftops and historic chimney pots are gradually uncovered in the soft daylight. The metropolis awakens in absolute, breathtaking silence, draped in a delicate veil of early morning mist that hangs low over the quiet Thames."
+              text={t('chapterAwakening.text_1')}
               className="text-sm md:text-base lg:text-lg text-[#B4B4B4] font-sans font-light leading-relaxed"
             />
             <SplitText
               type="lines"
-              text='"The river glides at his own sweet will: Dear God! the very houses seem asleep; And all that mighty heart is lying still!"'
+              text={t('chapterAwakening.quote')}
               className="border-l-2 border-[#C9B07C] pl-4 italic text-base md:text-lg text-[#D1D1D1] my-2 font-serif"
             />
             <SplitText
               type="lines"
-              text="Over the centuries, the ancient red brick, weathered Portland stone, and traditional masonry structures of these historic mews and townhouses have absorbed both the rain and the soft, golden English sun. Each architectural layer reflects a rich tapestry of history, capturing quiet stories of generations who walked these cobbled streets under the changing British sky."
+              text={t('chapterAwakening.text_2')}
               className="text-sm md:text-base lg:text-lg text-[#B4B4B4] font-sans font-light leading-relaxed"
             />
             <div className="flex items-center gap-2 mt-2 font-mono text-[10px] md:text-xs text-[#C9B07C] uppercase tracking-widest font-medium">
               <span className="w-1.5 h-1.5 rounded-full bg-[#C9B07C] animate-pulse" />
-              <span>Scroll Stabilized for Reading</span>
+              <span>{t('chapterAwakening.scroll_stabilized')}</span>
             </div>
           </div>
         </div>
@@ -120,7 +122,7 @@ export const ChapterAwakening: React.FC = () => {
             style={{ y: foregroundY }}
           >
             <span className="w-1.5 h-1.5 rounded-full bg-[#C9B07C] animate-pulse" />
-            <span>SONY A7R V • 35MM F1.8 • RAW</span>
+            <span>{t('chapterAwakening.camera_info')}</span>
           </motion.div>
         </div>
 

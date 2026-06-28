@@ -4,6 +4,7 @@ import { SplitText } from "./SplitText";
 import { ArrowDown } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslation } from "react-i18next";
 
 // Ensure GSAP plugins are registered safely
 if (typeof window !== "undefined") {
@@ -15,6 +16,7 @@ interface ChapterHeroProps {
 }
 
 export const ChapterHero: React.FC<ChapterHeroProps> = ({ onExplore }) => {
+  const { t } = useTranslation();
   const heroRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
   const midRef = useRef<HTMLDivElement>(null);
@@ -124,11 +126,11 @@ export const ChapterHero: React.FC<ChapterHeroProps> = ({ onExplore }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.8 }}
         >
-          Chapter 01 — Prologue
+          {t('chapterHero.prologue')}
         </motion.span>
 
         <SplitText
-          text="BRITAIN"
+          text={t('chapterHero.title')}
           type="chars"
           stagger={0.08}
           delayOffset={1.0}
@@ -138,7 +140,7 @@ export const ChapterHero: React.FC<ChapterHeroProps> = ({ onExplore }) => {
         <SplitText
           type="lines"
           delayOffset={1.8}
-          text="An immersive interactive documentary exploring the eternal soul of Britain—from the early morning mist of metropolitan London, through the honey-colored villages of the Cotswolds, to the wild, rugged highlands of Scotland. Scroll to begin a timeless journey of light, architecture, and memory."
+          text={t('chapterHero.description')}
           className="text-base md:text-lg lg:text-xl font-serif italic text-[#B4B4B4] tracking-wide mt-8 max-w-2xl font-light leading-relaxed text-center"
         />
       </div>
@@ -152,7 +154,7 @@ export const ChapterHero: React.FC<ChapterHeroProps> = ({ onExplore }) => {
         transition={{ delay: 2.5, duration: 1 }}
       >
         <span className="font-mono text-[9px] tracking-[0.3em] text-[#8B8B8B] uppercase group-hover:text-[#C9B07C] transition-colors duration-500">
-          Scroll to Begin
+          {t('chapterHero.scroll_to_begin')}
         </span>
         <motion.div
           animate={{ y: [0, 6, 0] }}

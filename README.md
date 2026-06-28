@@ -5,10 +5,13 @@
 ---
 
 ## 📖 Introduction
-**Chronicle** is a high-fidelity web-based documentary crafted in modern React and Tailwind CSS. It takes users on an emotional and visual journey through three distinct chapters of the United Kingdom:
-1. **The Landmarks of London**: Celebrating architectural marvels like Big Ben, Tower Bridge, and Westminster Abbey.
-2. **The English Countryside**: Immersing the senses in the honey-colored Cotswold stone, ivy-clad cottages, and Yorkshire Dales.
-3. **The Highlands of Scotland**: Traveling through the dramatic volcanic ruins of Glencoe, Isle of Skye legend, and medieval fortresses.
+**Chronicle** is a high-fidelity web-based documentary crafted in modern React and Tailwind CSS. It takes users on an emotional and visual journey through the United Kingdom:
+1. **The Awakening**: Morning fog over the metropolis.
+2. **Victorian Legacy**: Classic London architecture juxtaposed with modern metropolis perspectives.
+3. **Architectural Icons**: A cinematic showcase of historic landmarks like Tower Bridge, Big Ben, and Edinburgh Castle.
+4. **The English Countryside**: Immersing the senses in the honey-colored Cotswolds and the Lake District.
+5. **The Highlands of Scotland**: Traveling through the dramatic volcanic ruins of Glencoe and the Isle of Skye.
+6. **Nightfall**: The River Thames under the starlit sky as the city sleeps.
 
 Every element of the interface is carefully designed to mimic the rhythm of an elegant premium film reel, supported by ambient audio soundtracks and tactile micro-interactions.
 

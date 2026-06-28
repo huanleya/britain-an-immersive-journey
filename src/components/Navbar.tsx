@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "motion/react";
 import { Compass, Volume2, VolumeX, Sun, Moon } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 interface NavbarProps {
   currentChapter: number; // 1 to 7
@@ -30,6 +31,8 @@ export const Navbar: React.FC<NavbarProps> = ({
   theme,
   onToggleTheme,
 }) => {
+  const { t } = useTranslation();
+
   return (
     <motion.header
       id="main-navigation"
@@ -45,7 +48,7 @@ export const Navbar: React.FC<NavbarProps> = ({
       >
         <Compass className="w-4 h-4 text-[#C9B07C] transition-transform duration-700 group-hover:rotate-180" />
         <span className="font-sans text-xs font-semibold tracking-[0.4em] text-[#F6F6F6] uppercase">
-          Britain
+          {t('navbar.britain')}
         </span>
       </div>
 
@@ -72,7 +75,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   isActive ? "max-w-[120px] text-[#F6F6F6] ml-1" : "group-hover:max-w-[120px] group-hover:text-[#8B8B8B] group-hover:ml-1"
                 }`}
               >
-                {ch.name}
+                {t(`navbar.chapters.${idx}.name`)}
               </span>
 
               {/* Stable, elegant horizontal timeline bar underneath active node */}
@@ -91,7 +94,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         {/* Dynamic active chapter status badge */}
         <div className="flex items-center gap-2">
           <span className="hidden sm:inline font-mono text-[10px] tracking-[0.2em] text-[#8B8B8B] uppercase">
-            Chapter
+            {t('navbar.chapter')}
           </span>
           <span className="font-mono text-xs text-[#C9B07C]">
             {String(currentChapter).padStart(2, "0")}
@@ -102,7 +105,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         <button
           onClick={onToggleTheme}
           className="p-2 border border-[#1D1D1D] rounded-full hover:border-[#C9B07C] transition-colors duration-500 cursor-pointer text-[#F6F6F6] relative group"
-          title={theme === "light" ? "Switch to Dark Mode" : "Switch to Light Mode"}
+          title={theme === "light" ? t('navbar.switch_dark') : t('navbar.switch_light')}
         >
           {theme === "light" ? (
             <Moon className="w-3.5 h-3.5 text-[#C9B07C]" />
@@ -111,7 +114,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           )}
           {/* Subtle tooltip */}
           <span className="absolute top-12 right-0 bg-[#111111] text-[#F6F6F6] text-[9px] tracking-widest uppercase py-1 px-2.5 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap border border-[#1D1D1D]">
-            {theme === "light" ? "Dark Theme" : "Light Theme"}
+            {theme === "light" ? t('navbar.dark_theme') : t('navbar.light_theme')}
           </span>
         </button>
 
@@ -119,7 +122,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         <button
           onClick={onToggleAudio}
           className="p-2 border border-[#1D1D1D] rounded-full hover:border-[#C9B07C] transition-colors duration-500 cursor-pointer text-[#F6F6F6] relative group"
-          title={audioEnabled ? "Disable Ambient Sound" : "Enable Ambient Sound"}
+          title={audioEnabled ? t('navbar.disable_sound') : t('navbar.enable_sound')}
         >
           {audioEnabled ? (
             <Volume2 className="w-3.5 h-3.5 text-[#C9B07C] animate-pulse" />
@@ -128,7 +131,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           )}
           {/* Subtle tooltip */}
           <span className="absolute top-12 right-0 bg-[#111111] text-[#F6F6F6] text-[9px] tracking-widest uppercase py-1 px-2.5 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap border border-[#1D1D1D]">
-            {audioEnabled ? "Mute Ambience" : "Play Ambience"}
+            {audioEnabled ? t('navbar.mute_ambience') : t('navbar.play_ambience')}
           </span>
         </button>
       </div>

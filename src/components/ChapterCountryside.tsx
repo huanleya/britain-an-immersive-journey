@@ -6,54 +6,23 @@ import { ParallaxImage } from "./ParallaxImage";
 import { haptics } from "../utils/haptics";
 import imgLakeDistrict from "../assets/images/lake_district.png";
 import imgCoastalVan from "../assets/images/coastal_van.jpg";
+import { useTranslation } from "react-i18next";
 
 interface CountrysideItem {
   id: string;
-  title: string;
-  description: string;
   imageUrl: string;
-  coords: string;
 }
 
-const items: CountrysideItem[] = [
-  {
-    id: "cotswolds-mist",
-    title: "Cotswold Mornings",
-    description: "Centuries-old, hand-piled dry stone walls wind gracefully across damp, rolling green valleys. A thick, ethereal fog hovers gently above the lush pasturelands, slowly lifting as the morning advances to reflect the soft, ambient amber glow of a rising sun. In these quiet hours, the countryside feels entirely untouched by time, preserving a peaceful rural serenity.",
-    imageUrl: "https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?q=80&w=1200&auto=format&fit=crop",
-    coords: "51.8333° N • 1.8333° W",
-  },
-  {
-    id: "ivy-cottage",
-    title: "The Stone Cottage",
-    description: "An authentic, beautifully weathered traditional English cottage crafted from local, honey-colored Cotswold limestone. Vibrant climbing ivy wraps around the rustic timber door frames and leaded windows, nestled under a steep, moss-kissed slate roof. As the afternoon sun begins to set, the warm stone absorbs the late golden rays, exuding a comforting sense of home and heritage.",
-    imageUrl: "https://images.unsplash.com/photo-1543872084-c7bd3822856f?q=80&w=1200&auto=format&fit=crop",
-    coords: "51.9818° N • 1.7303° W",
-  },
-  {
-    id: "yorkshire-hills",
-    title: "Yorkshire Dales",
-    description: "Expansive, rugged high plains stretch out under dramatic, ever-changing overcast Northern skies. Ancient stone sheep pens and traditional barns dot the wild, heather-filled meadows, standing as silent monuments to a quiet and persistent rural way of life that has weathered centuries of harsh winds and winter snows in Northern England.",
-    imageUrl: "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?q=80&w=1200&auto=format&fit=crop",
-    coords: "54.2238° N • 2.0544° W",
-  },
-  {
-    id: "lake-district",
-    title: "Lake District",
-    description: "England’s most famous national park, characterized by deep glacial lakes and rugged fell mountains. Serene, mirror-like waters reflect the dramatic moody clouds and majestic green peaks. This tranquil, pristine landscape has inspired generations of poets and writers, capturing the romantic essence of the British wilderness.",
-    imageUrl: imgLakeDistrict,
-    coords: "54.4609° N • 3.0886° W",
-  },
-  {
-    id: "coastal-road-trip",
-    title: "Coastal Road Trip",
-    description: "The classic British seaside holiday spirit lives on. A vintage campervan rests near the sandy shores, bringing back the nostalgia of long summer drives along the breathtaking coastal routes of Cornwall and Devon. The vibrant surf culture and carefree spirit seamlessly blend with the stunning ocean horizons.",
-    imageUrl: imgCoastalVan,
-    coords: "50.4155° N • 5.0737° W",
-  },
+const itemsData: CountrysideItem[] = [
+  { id: "cotswolds-mist", imageUrl: "https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?q=80&w=1200&auto=format&fit=crop" },
+  { id: "ivy-cottage", imageUrl: "https://images.unsplash.com/photo-1543872084-c7bd3822856f?q=80&w=1200&auto=format&fit=crop" },
+  { id: "yorkshire-hills", imageUrl: "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?q=80&w=1200&auto=format&fit=crop" },
+  { id: "lake-district", imageUrl: imgLakeDistrict },
+  { id: "coastal-road-trip", imageUrl: imgCoastalVan },
 ];
 
 export const ChapterCountryside: React.FC = () => {
+  const { t } = useTranslation();
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollTrackRef = useRef<HTMLDivElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -124,10 +93,10 @@ export const ChapterCountryside: React.FC = () => {
           <div className="max-w-2xl flex flex-col gap-4">
             <span className="text-[10px] tracking-[0.4em] text-[#C9B07C] uppercase font-mono flex items-center gap-2">
               <Wind className="w-3 h-3 text-[#C9B07C] animate-spin" style={{ animationDuration: "12s" }} />
-              Chapter 05 — The English Countryside
+              {t('chapterCountryside.chapter_title')}
             </span>
             <h2 className="text-4xl md:text-6xl font-serif text-[#F6F6F6] font-normal tracking-wide">
-              <SplitText text="Where Stone Meets Soil" type="words" />
+              <SplitText text={t('chapterCountryside.title')} type="words" />
             </h2>
           </div>
 
@@ -135,7 +104,7 @@ export const ChapterCountryside: React.FC = () => {
           <div className="flex items-center gap-4">
             <span className="font-mono text-[10px] text-[#8B8B8B] tracking-widest uppercase flex items-center gap-1.5">
               <span className="w-1 h-1 rounded-full bg-[#C9B07C] animate-pulse" />
-              Drag or scroll horizontally • Scroll Stabilized
+              {t('chapterAwakening.drag_or_scroll')} • {t('chapterAwakening.scroll_stabilized')}
             </span>
             <div className="flex gap-2">
               <button
@@ -160,7 +129,7 @@ export const ChapterCountryside: React.FC = () => {
           onScroll={handleScroll}
           className="w-full flex gap-8 md:gap-12 overflow-x-scroll scrollbar-none py-4 px-1 cursor-grab active:cursor-grabbing snap-x snap-mandatory"
         >
-          {items.map((item, idx) => (
+          {itemsData.map((item, idx) => (
             <div
               key={item.id}
               className="w-[85vw] md:w-[480px] shrink-0 snap-center flex flex-col gap-6"
@@ -178,11 +147,11 @@ export const ChapterCountryside: React.FC = () => {
                 
                 <ParallaxImage
                   src={item.imageUrl}
-                  alt={item.title}
+                  alt={t(`chapterCountryside.items.${idx}.title`)}
                 />
                 <div className="absolute top-4 left-4 z-20 bg-black/60 backdrop-blur-md px-3.5 py-1.5 rounded border border-white/5 shadow-lg pointer-events-none">
                   <span className="font-mono text-[10px] text-[#C9B07C] tracking-widest uppercase font-semibold">
-                    {item.coords}
+                    {t(`chapterCountryside.items.${idx}.coords`)}
                   </span>
                 </div>
               </div>
@@ -191,7 +160,7 @@ export const ChapterCountryside: React.FC = () => {
               <div className="flex flex-col gap-2.5">
                 <div className="flex justify-between items-baseline">
                   <h3 className="font-serif italic text-xl md:text-2xl text-[#F6F6F6]">
-                    <SplitText text={item.title} type="words" />
+                    <SplitText text={t(`chapterCountryside.items.${idx}.title`)} type="words" />
                   </h3>
                   <span className="font-mono text-xs text-[#8B8B8B] font-semibold">
                     05.{idx + 1}
@@ -200,7 +169,7 @@ export const ChapterCountryside: React.FC = () => {
                 <SplitText
                   key={item.id}
                   type="lines"
-                  text={item.description}
+                  text={t(`chapterCountryside.items.${idx}.description`)}
                   className="text-sm text-[#D1D1D1] font-sans font-light leading-relaxed"
                 />
               </div>

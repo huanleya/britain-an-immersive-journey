@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { SplitText } from "./SplitText";
+import { useTranslation } from "react-i18next";
 
 interface Star {
   id: number;
@@ -12,6 +13,7 @@ interface Star {
 }
 
 export const ChapterNightfall: React.FC = () => {
+  const { t } = useTranslation();
   const [stars, setStars] = useState<Star[]>([]);
   const [isInView, setIsInView] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -116,11 +118,11 @@ export const ChapterNightfall: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 1 }}
         >
-          Chapter 07 — Nightfall
+          {t('chapterNightfall.chapter_title')}
         </motion.span>
         
         <h2 className="text-4xl md:text-7xl font-serif text-[#F6F6F6] font-normal tracking-wide leading-tight mb-6">
-          <SplitText text="The River of" type="words" /> <span className="font-serif italic text-[#C9B07C]"><SplitText text="Shadows" type="words" delayOffset={0.2} /></span>
+          <SplitText text={t('chapterNightfall.title_part1')} type="words" /> <span className="font-serif italic text-[#C9B07C]"><SplitText text={t('chapterNightfall.title_part2')} type="words" delayOffset={0.2} /></span>
         </h2>
 
         <motion.div
@@ -138,12 +140,12 @@ export const ChapterNightfall: React.FC = () => {
           viewport={{ once: true, margin: "-10%" }}
           transition={{ duration: 1.2, delay: 0.3 }}
         >
-          As the twilight of the blue hour deepens, the city’s sharp concrete edges dissolve into soft, artistic shadows. Under an endless, shimmering starlit dome, the historic River Thames flows like a dark velvet ribbon, mirroring centuries of legendary stories illuminated by the vibrant, golden glows of modern skyscrapers. The hectic metropolitan pace slows to a gentle murmur. The glowing skyline reflects beautifully off the calm ripples of the water, and a peaceful, majestic silence settles over the ancient city once more, bridging its rich, storied past with an enduring, brilliant future.
+          {t('chapterNightfall.description')}
         </motion.p>
 
         <div className="flex items-center gap-2 mt-2 font-mono text-[10px] md:text-xs text-[#C9B07C] uppercase tracking-widest font-semibold">
           <span className="w-1.5 h-1.5 rounded-full bg-[#C9B07C] animate-pulse" />
-          <span>Scroll Stabilized for Reading</span>
+          <span>{t('chapterNightfall.scroll')}</span>
         </div>
 
         <motion.div
@@ -154,13 +156,13 @@ export const ChapterNightfall: React.FC = () => {
           transition={{ delay: 0.6 }}
         >
           <div className="flex flex-col items-center">
-            <span className="font-mono text-[9px] text-[#8B8B8B] uppercase tracking-wider">Metropolis Status</span>
-            <span className="font-sans text-xs text-[#C9B07C] font-light mt-1">Lulled to Sleep</span>
+            <span className="font-mono text-[9px] text-[#8B8B8B] uppercase tracking-wider">{t('chapterNightfall.status_label')}</span>
+            <span className="font-sans text-xs text-[#C9B07C] font-light mt-1">{t('chapterNightfall.status_value')}</span>
           </div>
           <div className="w-[1px] h-8 bg-[#1D1D1D]" />
           <div className="flex flex-col items-center">
-            <span className="font-mono text-[9px] text-[#8B8B8B] uppercase tracking-wider">Local Time</span>
-            <span className="font-sans text-xs text-[#C9B07C] font-light mt-1">23:00 GMT</span>
+            <span className="font-mono text-[9px] text-[#8B8B8B] uppercase tracking-wider">{t('chapterNightfall.time_label')}</span>
+            <span className="font-sans text-xs text-[#C9B07C] font-light mt-1">{t('chapterNightfall.time_value')}</span>
           </div>
         </motion.div>
       </div>

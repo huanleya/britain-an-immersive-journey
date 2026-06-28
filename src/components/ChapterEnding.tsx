@@ -4,12 +4,14 @@ import { ArrowUp, Mail, ShieldAlert, Award, Compass, RefreshCw } from "lucide-re
 import { SplitText } from "./SplitText";
 import { haptics } from "../utils/haptics";
 import imgEpilogueBg from "../assets/images/epilogue_bg.png";
+import { useTranslation } from "react-i18next";
 
 interface ChapterEndingProps {
   onRestart: () => void;
 }
 
 export const ChapterEnding: React.FC<ChapterEndingProps> = ({ onRestart }) => {
+  const { t } = useTranslation();
   const [modalType, setModalType] = useState<"contact" | "credits" | null>(null);
 
   return (
@@ -22,15 +24,15 @@ export const ChapterEnding: React.FC<ChapterEndingProps> = ({ onRestart }) => {
         <motion.img
           src={imgEpilogueBg}
           alt="Ancient stones under a starry night sky"
-          className="w-full h-full object-cover opacity-30"
+          className="w-full h-full object-cover opacity-90"
           initial={{ scale: 1.05, filter: "blur(4px)" }}
           whileInView={{ scale: 1, filter: "blur(0px)" }}
           transition={{ duration: 3, ease: "easeOut" }}
           viewport={{ once: true }}
         />
-        {/* Heavy vignette / gradient overlay to ensure text readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#010101] via-[#010101]/80 to-[#010101]/60" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#010101] via-transparent to-transparent opacity-80" />
+        {/* Very light vignette just to ensure text readability in the center, without darkening the bottom stones */}
+        <div className="absolute inset-0 bg-[#010101]/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#010101]/40 via-transparent to-transparent" />
       </div>
 
       <div className="relative z-10" /> {/* spacing balance */}
@@ -44,14 +46,14 @@ export const ChapterEnding: React.FC<ChapterEndingProps> = ({ onRestart }) => {
           viewport={{ once: true }}
           transition={{ duration: 1.2 }}
         >
-          Epilogue
+          {t('chapterEnding.epilogue')}
         </motion.span>
 
         <h2 className="text-4xl md:text-7xl font-serif text-[#F6F6F6] font-normal leading-tight tracking-wide mb-8">
-          <SplitText text='"Britain is not simply seen.' type="words" />
+          <SplitText text={t('chapterEnding.quote1')} type="words" />
           <br />
           <span className="font-serif italic text-[#C9B07C]">
-            <SplitText text='It is experienced."' type="words" delayOffset={0.3} />
+            <SplitText text={t('chapterEnding.quote2')} type="words" delayOffset={0.3} />
           </span>
         </h2>
 
@@ -64,7 +66,7 @@ export const ChapterEnding: React.FC<ChapterEndingProps> = ({ onRestart }) => {
         />
 
         <p className="text-xs md:text-sm text-[#8B8B8B] font-mono tracking-widest uppercase">
-          A DOCUMENTARY STORY COMPLETED
+          {t('chapterEnding.completed')}
         </p>
       </div>
 
@@ -82,7 +84,7 @@ export const ChapterEnding: React.FC<ChapterEndingProps> = ({ onRestart }) => {
             rel="noopener noreferrer"
             className="text-[#8B8B8B] hover:text-[#C9B07C] transition-colors duration-300"
           >
-            Author: <span className="text-[#C9B07C]">huanleya</span>
+            {t('chapterEnding.author')}: <span className="text-[#C9B07C]">huanleya</span>
           </a>
         </div>
 
@@ -93,7 +95,7 @@ export const ChapterEnding: React.FC<ChapterEndingProps> = ({ onRestart }) => {
             className="flex items-center gap-2 hover:text-[#C9B07C] transition-colors duration-300 cursor-pointer text-left outline-none"
           >
             <ArrowUp className="w-3.5 h-3.5 text-[#C9B07C]" />
-            <span>Explore Again</span>
+            <span>{t('chapterEnding.explore_again')}</span>
           </button>
 
           {/* Contact Trigger */}
@@ -104,7 +106,7 @@ export const ChapterEnding: React.FC<ChapterEndingProps> = ({ onRestart }) => {
             }}
             className="hover:text-[#C9B07C] transition-colors duration-300 cursor-pointer outline-none"
           >
-            Contact
+            {t('chapterEnding.contact')}
           </button>
 
           {/* Credits Trigger */}
@@ -115,7 +117,7 @@ export const ChapterEnding: React.FC<ChapterEndingProps> = ({ onRestart }) => {
             }}
             className="hover:text-[#C9B07C] transition-colors duration-300 cursor-pointer outline-none"
           >
-            Credits
+            {t('chapterEnding.credits')}
           </button>
         </div>
       </footer>
@@ -145,19 +147,19 @@ export const ChapterEnding: React.FC<ChapterEndingProps> = ({ onRestart }) => {
                 <>
                   <div className="flex items-center gap-3">
                     <Mail className="w-5 h-5 text-[#C9B07C]" />
-                    <h3 className="font-serif text-xl text-[#F6F6F6]">Get in Touch</h3>
+                    <h3 className="font-serif text-xl text-[#F6F6F6]">{t('chapterEnding.get_in_touch')}</h3>
                   </div>
                   <div className="h-[1px] w-full bg-[#1D1D1D]" />
                   <SplitText
                     type="lines"
-                    text="This cinematic immersive documentary was created to push the boundaries of digital narrative experiences. For inquiries regarding licensing, curation, or web consulting, reach out through our digital desk:"
+                    text={t('chapterEnding.contact_desc')}
                     className="text-xs text-[#8B8B8B] leading-relaxed"
                   />
                   <a
-                    href="mailto:curator@britain-immersive.co.uk"
+                    href="mailto:mchuanle198@gmail.com"
                     className="flex items-center justify-between p-3 bg-[#050505] rounded border border-[#1D1D1D] text-xs text-[#C9B07C] hover:border-[#C9B07C] transition-colors duration-300"
                   >
-                    <span>curator@britain-immersive.co.uk</span>
+                    <span>mchuanle198@gmail.com</span>
                     <ArrowUp className="w-3.5 h-3.5 rotate-45" />
                   </a>
                 </>
@@ -165,34 +167,34 @@ export const ChapterEnding: React.FC<ChapterEndingProps> = ({ onRestart }) => {
                 <>
                   <div className="flex items-center gap-3">
                     <Award className="w-5 h-5 text-[#C9B07C]" />
-                    <h3 className="font-serif text-xl text-[#F6F6F6]">Production Credits</h3>
+                    <h3 className="font-serif text-xl text-[#F6F6F6]">{t('chapterEnding.production_credits')}</h3>
                   </div>
                   <div className="h-[1px] w-full bg-[#1D1D1D]" />
                   <div className="flex flex-col gap-4 text-xs">
                     <div className="flex justify-between items-baseline">
-                      <span className="text-[#8B8B8B]">Author</span>
+                      <span className="text-[#8B8B8B]">{t('chapterEnding.author')}</span>
                       <a href="https://github.com/huanleya" target="_blank" rel="noopener noreferrer" className="text-[#C9B07C] hover:underline font-mono">huanleya</a>
                     </div>
                     <div className="flex justify-between items-baseline">
-                      <span className="text-[#8B8B8B]">Creative Direction</span>
+                      <span className="text-[#8B8B8B]">{t('chapterEnding.creative_direction')}</span>
                       <span className="text-[#F6F6F6] font-mono">huanleya</span>
                     </div>
                     <div className="flex justify-between items-baseline">
-                      <span className="text-[#8B8B8B]">Cinematography (RAW)</span>
+                      <span className="text-[#8B8B8B]">{t('chapterEnding.cinematography')}</span>
                       <span className="text-[#F6F6F6] font-mono">Sony A7R V • Unsplash</span>
                     </div>
                     <div className="flex justify-between items-baseline">
-                      <span className="text-[#8B8B8B]">Interactive Engineering</span>
+                      <span className="text-[#8B8B8B]">{t('chapterEnding.interactive_engineering')}</span>
                       <span className="text-[#F6F6F6] font-mono">GSAP + Lenis + Motion</span>
                     </div>
                     <div className="flex justify-between items-baseline">
-                      <span className="text-[#8B8B8B]">Symphonic Ambience</span>
+                      <span className="text-[#8B8B8B]">{t('chapterEnding.symphonic_ambience')}</span>
                       <span className="text-[#F6F6F6] font-mono">Web Audio Synthesizer</span>
                     </div>
                   </div>
                   <SplitText
                     type="lines"
-                    text='"Designed in the spirit of British luxury and documentary realism."'
+                    text={t('chapterEnding.designed_in')}
                     className="text-[10px] text-[#8B8B8B] italic leading-relaxed text-center mt-2"
                   />
                 </>
@@ -205,7 +207,7 @@ export const ChapterEnding: React.FC<ChapterEndingProps> = ({ onRestart }) => {
                 }}
                 className="mt-2 w-full py-2.5 bg-[#050505] hover:bg-[#1D1D1D] text-xs font-mono text-[#8B8B8B] hover:text-[#F6F6F6] border border-[#1D1D1D] rounded transition-colors duration-300 cursor-pointer"
               >
-                Close Window
+                {t('chapterEnding.close_window')}
               </button>
             </motion.div>
           </motion.div>

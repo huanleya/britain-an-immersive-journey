@@ -11,6 +11,7 @@ import { CustomCursor } from "./components/CustomCursor";
 import { CinematicOverlay } from "./components/CinematicOverlay";
 import { haptics } from "./utils/haptics";
 import { Lightbox } from "./components/Lightbox";
+import { bgAudio } from "./components/AudioAmbience";
 
 // Import all chapter modules
 import { ChapterHero } from "./components/ChapterHero";
@@ -291,6 +292,9 @@ export default function App() {
 
   const handleToggleAudio = () => {
     haptics.mediumClick();
+    if (!audioEnabled) {
+      bgAudio.play().catch(e => console.warn("Autoplay prevented:", e));
+    }
     setAudioEnabled((prev) => !prev);
   };
 

@@ -5,60 +5,30 @@ import { ParallaxImage } from "./ParallaxImage";
 import imgLondonEye from "../assets/images/london_eye.png";
 import imgTowerBridge from "../assets/images/tower_bridge.png";
 import imgStPauls from "../assets/images/st_pauls.png";
+import imgBigBen from "../assets/images/big_ben.jpg";
+import imgBuckingham from "../assets/images/buckingham.jpg";
+import imgEdinburghCastle from "../assets/images/edinburgh_castle.jpg";
+import imgBritishMuseum from "../assets/images/british_museum.jpg";
+import { useTranslation } from "react-i18next";
 
 interface Landmark {
   id: string;
-  name: string;
-  sub: string;
-  location: string;
-  description: string;
   imageUrl: string;
 }
 
-const landmarks: Landmark[] = [
-  {
-    id: "big-ben",
-    name: "Big Ben",
-    sub: "Elizabeth Tower",
-    location: "Westminster, London",
-    description: "The towering guardian of the River Thames. Completed in 1859, the Elizabeth Tower stands as an iconic symbol of London and a pinnacle of Gothic Revival design, envisioned by architect Augustus Pugin. For over a century and a half, its majestic Great Clock has reliably marked London's timeline. Its massive 13.7-ton bell, known colloquially as Big Ben, chimes the hours across the bustling capital, embodying the quiet resilience, perseverance, and timeless heritage of Great Britain.",
-    imageUrl: "https://images.unsplash.com/photo-1529655683826-aba9b3e77383?q=80&w=1920&auto=format&fit=crop",
-  },
-  {
-    id: "tower-bridge",
-    name: "Tower Bridge",
-    sub: "Suspension Bascule Bridge",
-    location: "Tower Hamlets, London",
-    description: "Built between 1886 and 1894, this iconic suspension and bascule bridge blends monumental Victorian stone masonry with advanced steel-frame suspension engineering. Clad in Cornish granite and Portland stone to protect the structural ironwork, it remains a vital artery of London. The bridge gracefully spans the Thames, connecting the city's ancient maritime past and industrial revolution heritage with its dynamic, modern architectural vision.",
-    imageUrl: imgTowerBridge,
-  },
-  {
-    id: "westminster",
-    name: "Westminster",
-    sub: "Palace of Westminster",
-    location: "Westminster, London",
-    description: "The historic and political heart of British democracy, situated majestically on the north bank of the River Thames. Rising above the water with intricate golden stone carvings, towering spires, and grand gothic arches, the Palace is a UNESCO World Heritage site representing centuries of political and artistic heritage. It hosts the Houses of Parliament, where the echoes of defining historical speeches linger in magnificent chambers designed by Charles Barry.",
-    imageUrl: "https://images.unsplash.com/photo-1486299267070-83823f5448dd?q=80&w=1920&auto=format&fit=crop",
-  },
-  {
-    id: "st-pauls",
-    name: "St Paul's",
-    sub: "St Paul's Cathedral",
-    location: "City of London",
-    description: "An architectural masterpiece designed by Sir Christopher Wren, its breathtaking dome has dominated the City of London skyline for over 300 years. Built in the late 17th century as a symbol of London's resurrection after the Great Fire of 1666, it represents English Baroque design at its most supreme. Sunlight filters beautifully through the high clerestory windows, illuminating magnificent mosaics, quiet whispering galleries, and centuries of national remembrance.",
-    imageUrl: imgStPauls,
-  },
-  {
-    id: "london-eye",
-    name: "London Eye",
-    sub: "The Millennium Wheel",
-    location: "Lambeth, London",
-    description: "The giant, cantilevered observation wheel situated on the South Bank of the River Thames. Originally conceived as a celebration of the turn of the millennium, this elegant tensioned steel-and-glass wheel offers an expansive, breathtaking 360-degree panorama of the entire metropolis. As day turns to dusk, the wheel transitions gracefully, lighting up the purple twilight and offering a striking modern contrast to the ancient spires of Westminster.",
-    imageUrl: imgLondonEye,
-  },
+const landmarksData: Landmark[] = [
+  { id: "tower-bridge", imageUrl: imgTowerBridge },
+  { id: "westminster", imageUrl: "https://images.unsplash.com/photo-1486299267070-83823f5448dd?q=80&w=1920&auto=format&fit=crop" },
+  { id: "st-pauls", imageUrl: imgStPauls },
+  { id: "london-eye", imageUrl: imgLondonEye },
+  { id: "big-ben", imageUrl: imgBigBen },
+  { id: "buckingham", imageUrl: imgBuckingham },
+  { id: "edinburgh-castle", imageUrl: imgEdinburghCastle },
+  { id: "british-museum", imageUrl: imgBritishMuseum },
 ];
 
 export const ChapterIcons: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <section
       id="chapter-04"
@@ -72,18 +42,18 @@ export const ChapterIcons: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 1 }}
         >
-          Chapter 04 — Icons of Britain
+          {t('chapterIcons.chapter_title')}
         </motion.span>
         
         <h2 className="text-4xl md:text-6xl font-serif text-[#F6F6F6] font-normal tracking-wide">
-          <SplitText text="Monoliths of Heritage" type="words" />
+          <SplitText text={t('chapterIcons.title')} type="words" />
         </h2>
       </div>
 
       {/* Stacked Interactive Viewports */}
       <div className="w-full flex flex-col gap-32 md:gap-48">
-        {landmarks.map((landmark, idx) => (
-          <LandmarkSection key={landmark.id} landmark={landmark} index={idx} />
+        {landmarksData.map((landmark, idx) => (
+          <LandmarkSection key={landmark.id} landmark={landmark} index={idx} t={t} />
         ))}
       </div>
     </section>
@@ -93,9 +63,10 @@ export const ChapterIcons: React.FC = () => {
 interface LandmarkSectionProps {
   landmark: Landmark;
   index: number;
+  t: any;
 }
 
-const LandmarkSection: React.FC<LandmarkSectionProps> = ({ landmark, index }) => {
+const LandmarkSection: React.FC<LandmarkSectionProps> = ({ landmark, index, t }) => {
   const elementRef = useRef<HTMLDivElement>(null);
   
   const { scrollYProgress } = useScroll({
@@ -130,7 +101,7 @@ const LandmarkSection: React.FC<LandmarkSectionProps> = ({ landmark, index }) =>
           <motion.div className="w-full h-full" style={{ scale: imgScale, y: imgY }}>
             <ParallaxImage
               src={landmark.imageUrl}
-              alt={landmark.name}
+              alt={t(`chapterIcons.landmarks.${index}.name`)}
             />
           </motion.div>
           
@@ -142,15 +113,15 @@ const LandmarkSection: React.FC<LandmarkSectionProps> = ({ landmark, index }) =>
         <div data-slow-scroll="true" className={`lg:col-span-5 flex flex-col gap-6 ${isEven ? "lg:order-2" : "lg:order-1"}`}>
           <div className="flex flex-col gap-2">
             <span className="font-mono text-[10px] md:text-xs tracking-[0.3em] text-[#C9B07C] uppercase font-semibold">
-              {landmark.location}
+              {t(`chapterIcons.landmarks.${index}.location`)}
             </span>
             
             <h3 className="text-3xl md:text-5xl font-serif text-[#F6F6F6] font-normal leading-tight tracking-wide">
-              <SplitText text={landmark.name} type="chars" />
+              <SplitText text={t(`chapterIcons.landmarks.${index}.name`)} type="chars" />
             </h3>
             
             <span className="text-sm font-serif italic text-[#C0C0C0] tracking-wider block mt-1">
-              — {landmark.sub}
+              — {t(`chapterIcons.landmarks.${index}.sub`)}
             </span>
           </div>
 
@@ -170,7 +141,7 @@ const LandmarkSection: React.FC<LandmarkSectionProps> = ({ landmark, index }) =>
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 1.2, delay: 0.4 }}
           >
-            {landmark.description}
+            {t(`chapterIcons.landmarks.${index}.description`)}
           </motion.p>
 
           <motion.div
