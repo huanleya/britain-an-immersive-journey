@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { ArrowUp, Mail, ShieldAlert, Award, Compass, RefreshCw } from "lucide-react";
 import { SplitText } from "./SplitText";
 import { haptics } from "../utils/haptics";
+import imgEpilogueBg from "../assets/images/epilogue_bg.png";
 
 interface ChapterEndingProps {
   onRestart: () => void;
@@ -16,7 +17,23 @@ export const ChapterEnding: React.FC<ChapterEndingProps> = ({ onRestart }) => {
       id="chapter-ending"
       className="relative w-full h-screen bg-[#010101] flex flex-col justify-between p-8 md:p-16 overflow-hidden select-none"
     >
-      <div /> {/* spacing balance */}
+      {/* Subtle Atmospheric Background */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <motion.img
+          src={imgEpilogueBg}
+          alt="Ancient stones under a starry night sky"
+          className="w-full h-full object-cover opacity-30"
+          initial={{ scale: 1.05, filter: "blur(4px)" }}
+          whileInView={{ scale: 1, filter: "blur(0px)" }}
+          transition={{ duration: 3, ease: "easeOut" }}
+          viewport={{ once: true }}
+        />
+        {/* Heavy vignette / gradient overlay to ensure text readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#010101] via-[#010101]/80 to-[#010101]/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#010101] via-transparent to-transparent opacity-80" />
+      </div>
+
+      <div className="relative z-10" /> {/* spacing balance */}
 
       {/* Center Cinematic Statement */}
       <div className="flex flex-col items-center justify-center text-center relative z-10 max-w-4xl mx-auto">
