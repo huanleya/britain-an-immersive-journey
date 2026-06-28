@@ -3,6 +3,8 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { SplitText } from "./SplitText";
 import { ParallaxImage } from "./ParallaxImage";
 import imgLondonEye from "../assets/images/london_eye.png";
+import imgTowerBridge from "../assets/images/tower_bridge.png";
+import imgStPauls from "../assets/images/st_pauls.png";
 
 interface Landmark {
   id: string;
@@ -28,7 +30,7 @@ const landmarks: Landmark[] = [
     sub: "Suspension Bascule Bridge",
     location: "Tower Hamlets, London",
     description: "Built between 1886 and 1894, this iconic suspension and bascule bridge blends monumental Victorian stone masonry with advanced steel-frame suspension engineering. Clad in Cornish granite and Portland stone to protect the structural ironwork, it remains a vital artery of London. The bridge gracefully spans the Thames, connecting the city's ancient maritime past and industrial revolution heritage with its dynamic, modern architectural vision.",
-    imageUrl: "https://images.unsplash.com/photo-1520116468816-95b69f847357?q=80&w=1920&auto=format&fit=crop",
+    imageUrl: imgTowerBridge,
   },
   {
     id: "westminster",
@@ -44,7 +46,7 @@ const landmarks: Landmark[] = [
     sub: "St Paul's Cathedral",
     location: "City of London",
     description: "An architectural masterpiece designed by Sir Christopher Wren, its breathtaking dome has dominated the City of London skyline for over 300 years. Built in the late 17th century as a symbol of London's resurrection after the Great Fire of 1666, it represents English Baroque design at its most supreme. Sunlight filters beautifully through the high clerestory windows, illuminating magnificent mosaics, quiet whispering galleries, and centuries of national remembrance.",
-    imageUrl: "https://images.unsplash.com/photo-1492567291473-fe3dfc175b45?q=80&w=1920&auto=format&fit=crop",
+    imageUrl: imgStPauls,
   },
   {
     id: "london-eye",

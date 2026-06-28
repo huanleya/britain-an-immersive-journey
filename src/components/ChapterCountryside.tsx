@@ -4,6 +4,8 @@ import { ChevronRight, ChevronLeft, Wind } from "lucide-react";
 import { SplitText } from "./SplitText";
 import { ParallaxImage } from "./ParallaxImage";
 import { haptics } from "../utils/haptics";
+import imgLakeDistrict from "../assets/images/lake_district.png";
+import imgCoastalVan from "../assets/images/coastal_van.jpg";
 
 interface CountrysideItem {
   id: string;
@@ -34,6 +36,20 @@ const items: CountrysideItem[] = [
     description: "Expansive, rugged high plains stretch out under dramatic, ever-changing overcast Northern skies. Ancient stone sheep pens and traditional barns dot the wild, heather-filled meadows, standing as silent monuments to a quiet and persistent rural way of life that has weathered centuries of harsh winds and winter snows in Northern England.",
     imageUrl: "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?q=80&w=1200&auto=format&fit=crop",
     coords: "54.2238° N • 2.0544° W",
+  },
+  {
+    id: "lake-district",
+    title: "Lake District",
+    description: "England’s most famous national park, characterized by deep glacial lakes and rugged fell mountains. Serene, mirror-like waters reflect the dramatic moody clouds and majestic green peaks. This tranquil, pristine landscape has inspired generations of poets and writers, capturing the romantic essence of the British wilderness.",
+    imageUrl: imgLakeDistrict,
+    coords: "54.4609° N • 3.0886° W",
+  },
+  {
+    id: "coastal-road-trip",
+    title: "Coastal Road Trip",
+    description: "The classic British seaside holiday spirit lives on. A vintage campervan rests near the sandy shores, bringing back the nostalgia of long summer drives along the breathtaking coastal routes of Cornwall and Devon. The vibrant surf culture and carefree spirit seamlessly blend with the stunning ocean horizons.",
+    imageUrl: imgCoastalVan,
+    coords: "50.4155° N • 5.0737° W",
   },
 ];
 

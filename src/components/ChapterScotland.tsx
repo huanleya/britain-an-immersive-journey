@@ -5,6 +5,8 @@ import { ParallaxImage } from "./ParallaxImage";
 import { haptics } from "../utils/haptics";
 import imgEileanDonan from "../assets/images/eilean_donan.png";
 import imgGlencoe from "../assets/images/glencoe.png";
+import imgStorr from "../assets/images/storr.png";
+import imgLochNess from "../assets/images/loch_ness.png";
 interface ScotlandStory {
   id: string;
   title: string;
@@ -34,6 +36,20 @@ const stories: ScotlandStory[] = [
     description: "An old, beautifully arched stone bridge cutting through the wild, sweeping landscapes beneath the Red Cuillin mountains on the Isle of Skye. Cold mountain water flows violently and clearly underneath, originating from high, mist-enshrouded peaks enveloped in heavy rolling gray fog. This historic bridge binds the primeval volcanic geology of Skye with traditional masonry, serving as a crossing between physical worlds and legend.",
     imageUrl: "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?q=80&w=1200&auto=format&fit=crop",
     accent: "Isle of Skye",
+  },
+  {
+    id: "scot-storr",
+    title: "The Old Man of Storr",
+    description: "A monumental, jagged basalt rock pinnacle rising abruptly from the steep, grassy hillside of the Trotternish peninsula on the Isle of Skye. Standing tall against a moody, misty sky, these dramatic ancient rock formations look like they belong to a legendary, untamed prehistoric world.",
+    imageUrl: imgStorr,
+    accent: "Isle of Skye",
+  },
+  {
+    id: "scot-lochness",
+    title: "Loch Ness",
+    description: "A deep, dark, and narrow freshwater loch stretching through the Scottish Highlands. Surrounded by steep pine-covered hills and the romantic ruins of Urquhart Castle, the still waters are often cloaked in thick morning fog. It is a place evoking deep mystery, folklore, and the enduring legend of the loch's elusive monster.",
+    imageUrl: imgLochNess,
+    accent: "Scottish Highlands",
   },
 ];
 
