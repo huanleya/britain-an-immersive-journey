@@ -1,7 +1,8 @@
-import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "motion/react";
+import React, { useRef, useState } from "react";
+import { motion, useScroll, useTransform, AnimatePresence } from "motion/react";
 import { SplitText } from "./SplitText";
 import { ParallaxImage } from "./ParallaxImage";
+import { haptics } from "../utils/haptics";
 import imgLondonEye from "../assets/images/london_eye.png";
 import imgTowerBridge from "../assets/images/tower_bridge.png";
 import imgStPauls from "../assets/images/st_pauls.png";
@@ -97,6 +98,7 @@ interface LandmarkSectionProps {
 
 const LandmarkSection: React.FC<LandmarkSectionProps> = ({ landmark, index }) => {
   const elementRef = useRef<HTMLDivElement>(null);
+  const [isZoomed, setIsZoomed] = useState(false);
   
   const { scrollYProgress } = useScroll({
     target: elementRef,
@@ -117,7 +119,10 @@ const LandmarkSection: React.FC<LandmarkSectionProps> = ({ landmark, index }) =>
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center relative z-10">
         
         {/* Landmark Image Frame (takes 7 cols) */}
-        <div className={`lg:col-span-7 relative h-[400px] md:h-[550px] rounded overflow-hidden border border-[#1D1D1D] shadow-2xl ${isEven ? "lg:order-1" : "lg:order-2"}`}>
+        <div 
+          onClick={() => { haptics.lightTap(); setIsZoomed(true); }}
+          className={`lg:col-span-7 relative h-[400px] md:h-[550px] rounded overflow-hidden border border-[#1D1D1D] shadow-2xl cursor-zoom-in group ${isEven ? "lg:order-1" : "lg:order-2"}`}
+        >
           {/* Cover Mask */}
           <motion.div
             className="absolute inset-0 bg-[#050505] z-10"
@@ -135,7 +140,12 @@ const LandmarkSection: React.FC<LandmarkSectionProps> = ({ landmark, index }) =>
           </motion.div>
           
           {/* Shadow Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/40 via-transparent to-transparent z-10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/40 via-transparent to-transparent z-10 pointer-events-none" />
+          
+          {/* Hover indicator */}
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500 z-20 flex items-center justify-center pointer-events-none">
+             <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white/80 font-mono text-xs tracking-widest uppercase border border-white/20 bg-black/40 px-4 py-2 rounded-full backdrop-blur-sm">View</span>
+          </div>
         </div>
 
         {/* Landmark Narrative details (takes 5 cols) */}
@@ -190,6 +200,28 @@ const LandmarkSection: React.FC<LandmarkSectionProps> = ({ landmark, index }) =>
         </div>
 
       </div>
+
+      <AnimatePresence>
+        {isZoomed && (
+          <motion.div 
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }} 
+            exit={{ opacity: 0 }}
+            onClick={() => { haptics.lightTap(); setIsZoomed(false); }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-md p-4 md:p-8 cursor-zoom-out"
+          >
+            <motion.img 
+              src={landmark.imageUrl} 
+              alt={landmark.name}
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="max-w-full max-h-full object-contain rounded shadow-2xl"
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
