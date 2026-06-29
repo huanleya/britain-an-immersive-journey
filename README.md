@@ -2,6 +2,8 @@
 
 *An immersive interactive documentary across the timeless landscapes, historic architectures, and sensory stories of the United Kingdom.*
 
+<img src="./assets/demo-image.png" alt="Britain - An Immersive Journey Preview" width="100%">
+
 ---
 
 ## 📖 Introduction
