@@ -29,6 +29,8 @@ body {
   letter-spacing: -0.011em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 /* Ensure all sans body elements retain refined line-height and letter-spacing */
@@ -43,45 +45,11 @@ h1, h2, h3, h4, h5, h6, .font-serif {
   font-weight: 400;
 }
 
-/* Custom premium ultra-thin exclusive scrollbar */
+/* Hide scrollbar for Chrome, Safari and Opera */
 ::-webkit-scrollbar {
-  width: 3.5px;
-  height: 3.5px;
+  display: none;
 }
 
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(201, 176, 124, 0.4);
-  border-radius: 9999px;
-  transition: background-color 0.3s ease;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(201, 176, 124, 0.85);
-}
-
-.light-mode ::-webkit-scrollbar-thumb,
-.light-mode::-webkit-scrollbar-thumb {
-  background-color: rgba(164, 130, 69, 0.4);
-}
-
-.light-mode ::-webkit-scrollbar-thumb:hover,
-.light-mode::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(164, 130, 69, 0.85);
-}
-
-/* Firefox standard scrollbar styling */
-html {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(201, 176, 124, 0.4) transparent;
-}
-
-html.light-mode {
-  scrollbar-color: rgba(164, 130, 69, 0.4) transparent;
-}
 
 /* Custom scrollbar utility for container elements */
 .scrollbar-none::-webkit-scrollbar {
